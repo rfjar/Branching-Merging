@@ -1,7 +1,5 @@
 <?php session_start();
 if ($_SESSION['role'] != 'admin') {
-    session_destroy();
-    // echo "anda bukan role user";
     header('Location: index.php');
 }
 ?>
@@ -16,7 +14,8 @@ if ($_SESSION['role'] != 'admin') {
 </head>
 
 <body>
-    <h1>Selamat datang <?php echo $_SESSION['name'] ?></h1>
+    <h1>Selamat datang administrator <?php echo $_SESSION['name'] ?></h1>
+    <button href="./backend/logout.php">logout</button>
 </body>
 
 </html>
